@@ -62,13 +62,13 @@ function segment() {
 sum=0
 
 while read line; do
-	pos[0]="."   #  aaaa
-	pos[1]="."   # b    c
-	pos[2]="."   # b    c
-	pos[3]="."   #  dddd
-	pos[4]="."   # e    f
-	pos[5]="."   # e    f
-	pos[6]="."   #  gggg
+	pos[0]="."   #  0000
+	pos[1]="."   # 1    2
+	pos[2]="."   # 1    2
+	pos[3]="."   #  3333
+	pos[4]="."   # 4    5
+	pos[5]="."   # 4    5
+	pos[6]="."   #  6666
 
 	input=$(echo "$line" | cut -d"|" -f1 | tr -s " " | sed 's/^ //g' | sed 's/ $//g' | cut -d"|" -f1 | tr -s " " | sed "s/^ //g" | tr " " "\n" | awk '{ print length(), $0 | "sort -n" }' | grep -v "0 " | cut -d" " -f2)
 	output=$(echo "$line" | cut -d"|" -f2 | tr -s " " | sed 's/^ //g' | sed 's/ $//g')
