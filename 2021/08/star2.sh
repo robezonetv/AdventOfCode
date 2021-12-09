@@ -5,13 +5,13 @@ declare dot=()
 
 function segment() {
 
-        dot[0]="."   #  aaaa
-	dot[1]="."   # b    c
-	dot[2]="."   # b    c
-	dot[3]="."   #  dddd
-	dot[4]="."   # e    f
-	dot[5]="."   # e    f
-	dot[6]="."   #  gggg
+        dot[0]="."   #  0000
+	dot[1]="."   # 1    2
+	dot[2]="."   # 1    2
+	dot[3]="."   #  3333
+	dot[4]="."   # 4    5
+	dot[5]="."   # 4    5
+	dot[6]="."   #  6666
 
 	word=$1
 
