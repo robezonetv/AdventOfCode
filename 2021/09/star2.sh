@@ -62,8 +62,6 @@ function recursive() {
 	done
 }
 
-input=$(cat ./low-pos)
-
 for i in $(cat ./low-pos); do
 	echo $i > ./count.log
 	recursive "$i"
