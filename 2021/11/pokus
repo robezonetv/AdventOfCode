@@ -1,0 +1,33 @@
+#!/bin/bash
+
+declare -A map
+
+flash=0
+
+x=0
+while read line; do
+	for ((y=0; y<${#line}; y++)); do
+		val=${line:$y:1}
+		map[$x,$y]=$val
+	done
+	x=$((x+1))
+done<<<$(cat ./input)
+
+function plusOne() {
+	for ((i=0; i<$x; i++)); do
+		for ((j=0; j<$y; j++)); do
+			echo "processing [$i,$j]"
+			map[$i,$j]=$(( ${map[$i,$j]} + 1))
+			#if [[ ${map[$i,$j]} -gt 9 ]]; then
+			#	# increase all around me
+			#	[[ $j -eq $((y-1)) ]] && let "map[$i,$((j++))]+=1"
+			#	[[ $i -eq $((x-1)) && $j -eq $((y-1)) ]] && let "map[$((i++)),$((j++))]+=1"
+			#	[[ $i -eq $((x-1)) ]] && let "map[$((i++)),$j]+=1"
+			#	[[ $i -eq $((x-1)) && $j -ne 0 ]] && let "map[$((i++)),$((j--))]+=1"
+			#	[[ $j -ne 0 ]] && let "map[$i,$((j--))]+=1"
+			#fi
+		done
+	done
+}
+
+plusOne
