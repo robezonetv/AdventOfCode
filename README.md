@@ -1,3 +1,3 @@
 # AdventOfCode
 
-(AdventOfCode)[https://adventofcode.com] - all task available here
+[AdventOfCode](https://adventofcode.com) - all task available here
